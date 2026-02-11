@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spektro Electronics Kit - English Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* === RESET & BASE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Nunito', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #E3F2FD 0%, #F5F7FA 50%, #E8F5E9 100%);
+      color: #333;
+      min-height: 100vh;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    /* === HEADER === */
+    #site-header {
+      background: linear-gradient(135deg, #1565C0, #1976D2, #2196F3);
+      color: white;
+      padding: 1rem 2rem 0.5rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-family: 'Baloo 2', 'Comic Sans MS', cursive;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .site-subtitle {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      font-weight: 600;
+    }
+    .print-btn {
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.5);
+      color: white;
+      padding: 5px 16px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: 'Baloo 2', cursive;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .print-btn:hover { background: rgba(255,255,255,0.35); }
+    .progress-container {
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 3px;
+      margin-top: 0.6rem;
+    }
+    .progress-bar {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #4CAF50, #8BC34A, #CDDC39);
+      transition: width 0.4s ease;
+      width: 5%;
+    }
+
+    /* === MAIN CONTENT === */
+    #main-content {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 100px;
+    }
+
+    .page-container {
+      animation: fadeSlideIn 0.35s ease-out;
+    }
+    .page-container.slide-back {
+      animation: fadeSlideBack 0.35s ease-out;
+    }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeSlideBack {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* === PAGE HEADER === */
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .page-title {
+      font-family: 'Baloo 2', 'Comic Sans MS', cursive;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1565C0;
+    }
+    .page-counter {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1rem;
+      background: #4CAF50;
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* === CONTENT GRID === */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 55% 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    /* === PHOTO COLUMN === */
+    .photo-column { position: sticky; top: 90px; }
+    .photo-frame {
+      background: white;
+      border-radius: 14px;
+      padding: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .page-photo {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      object-fit: contain;
+      max-height: 520px;
+    }
+    .parts-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 0.8rem;
+      justify-content: center;
+    }
+    .part-badge {
+      font-family: 'Baloo 2', cursive;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: #E3F2FD;
+      color: #1565C0;
+      border: 2px solid #90CAF9;
+      padding: 2px 10px;
+      border-radius: 50px;
+    }
+
+    /* === TEXT COLUMN === */
+    .text-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* === STEP ITEMS === */
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+    .step-number {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: linear-gradient(135deg, #43A047, #66BB6A);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(76,175,80,0.3);
+      margin-top: 2px;
+    }
+    .step-text {
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .step-text strong { color: #1565C0; }
+    .step-text ul {
+      margin: 0.3rem 0 0.2rem 1.1rem;
+      padding: 0;
+      list-style-type: disc;
+    }
+    .step-text li {
+      margin-bottom: 0.25rem;
+      line-height: 1.5;
+    }
+
+    /* === DESCRIPTION BOX === */
+    .description-box {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .description-box p { margin-bottom: 0.6rem; }
+    .description-box p:last-child { margin-bottom: 0; }
+
+    /* === STICKY NOTE FUN FACT === */
+    .fun-fact { margin: 0.5rem 0; }
+    .sticky-note {
+      background: #FFF9C4;
+      padding: 1rem 1.2rem;
+      border-radius: 3px;
+      box-shadow: 2px 3px 12px rgba(0,0,0,0.13);
+      position: relative;
+      transform: rotate(-0.8deg);
+      border-left: 5px solid #FBC02D;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+    .sticky-note::before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 18px;
+      width: 16px;
+      height: 16px;
+      background: #E53935;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    }
+    .sticky-note-title {
+      font-family: 'Baloo 2', cursive;
+      color: #F57F17;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+
+    /* === WARNING BOX === */
+    .warning-box {
+      background: #FFEBEE;
+      border-left: 5px solid #E53935;
+      border-radius: 10px;
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      font-size: 0.93rem;
+      font-weight: 600;
+    }
+    .warning-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* === TIP BOX === */
+    .tip-box {
+      background: #E3F2FD;
+      border-left: 5px solid #2196F3;
+      border-radius: 10px;
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      font-size: 0.93rem;
+    }
+    .tip-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* === NAVIGATION FOOTER === */
+    #nav-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: 0 -3px 15px rgba(0,0,0,0.1);
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      gap: 0.5rem;
+    }
+    .nav-btn {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1rem;
+      padding: 8px 24px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #2196F3, #1976D2);
+      color: white;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform 0.15s, box-shadow 0.15s;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 14px rgba(33,150,243,0.4);
+    }
+    .nav-btn:active { transform: scale(0.97); }
+    .nav-btn:disabled {
+      background: #ccc;
+      cursor: default;
+      transform: none;
+      box-shadow: none;
+    }
+    .nav-arrow { font-size: 1.1rem; }
+
+    /* === PAGE DOTS === */
+    .page-dots {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 50%;
+    }
+    .page-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+    .page-dot:hover { background: #90CAF9; transform: scale(1.2); }
+    .page-dot.active {
+      background: #2196F3;
+      transform: scale(1.4);
+      box-shadow: 0 0 6px rgba(33,150,243,0.5);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 950px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .photo-column {
+        position: static;
+      }
+      .page-photo { max-height: 400px; }
+      .site-title { font-size: 1.4rem; }
+      .page-title { font-size: 1.6rem; }
+      #main-content { padding: 1rem 1rem 100px; }
+    }
+
+    @media (max-width: 600px) {
+      .page-photo { max-height: 280px; }
+      .nav-btn { padding: 8px 16px; font-size: 0.9rem; }
+      .page-dots { gap: 3px; }
+      .page-dot { width: 8px; height: 8px; }
+      .site-title { font-size: 1.2rem; }
+      .page-title { font-size: 1.3rem; }
+    }
+
+    /* === PRINT STYLES === */
+    #print-container { display: none; }
+
+    @media print {
+      #nav-footer, .progress-container, .print-btn, #main-content { display: none !important; }
+      #site-header {
+        position: static;
+        padding: 0.5rem 1rem;
+        box-shadow: none;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      body {
+        background: white !important;
+        font-size: 11pt;
+      }
+      #print-container {
+        display: block !important;
+      }
+      .print-page {
+        page-break-after: always;
+        padding: 0.5cm 0;
+      }
+      .print-page:last-child { page-break-after: auto; }
+      .print-page .page-title {
+        font-family: 'Baloo 2', cursive;
+        font-size: 16pt;
+        color: #1565C0;
+        margin-bottom: 0.4cm;
+        border-bottom: 2px solid #2196F3;
+        padding-bottom: 0.2cm;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .print-page .print-grid {
+        display: grid;
+        grid-template-columns: 50% 1fr;
+        gap: 0.5cm;
+      }
+      .print-page img {
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+      }
+      .print-page .step-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.3cm;
+        margin-bottom: 0.2cm;
+      }
+      .print-page .step-number {
+        width: 22px; height: 22px; min-width: 22px;
+        background: #4CAF50;
+        color: white;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 10pt; font-weight: 700;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .print-page .step-text { font-size: 9pt; line-height: 1.4; }
+      .print-page .step-text ul { margin: 0.1cm 0 0.1cm 0.5cm; padding: 0; }
+      .print-page .step-text li { margin-bottom: 0.05cm; font-size: 9pt; }
+      .print-page .description-box {
+        font-size: 9pt; line-height: 1.4;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        padding: 0.2cm 0.3cm;
+        margin-top: 0.2cm;
+      }
+      .print-page .print-extras { margin-top: 0.2cm; }
+      .print-page .warning-box,
+      .print-page .tip-box,
+      .print-page .sticky-note {
+        font-size: 8pt;
+        padding: 0.15cm 0.25cm;
+        margin-top: 0.15cm;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .print-page .warning-box {
+        background: #FFEBEE;
+        border-left: 3px solid #E53935;
+        border-radius: 4px;
+        display: flex; gap: 0.2cm;
+      }
+      .print-page .tip-box {
+        background: #E3F2FD;
+        border-left: 3px solid #2196F3;
+        border-radius: 4px;
+        display: flex; gap: 0.2cm;
+      }
+      .print-page .sticky-note {
+        background: #FFF9C4;
+        border-left: 3px solid #FBC02D;
+        border-radius: 2px;
+        transform: none;
+      }
+      .print-page .sticky-note::before { display: none; }
+      .print-page .sticky-note-title { font-size: 9pt; color: #F57F17; font-weight: 700; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="header-content">
+      <h1 class="site-title">Spektro Electronics Kit</h1>
+      <p class="site-subtitle">English Translation Guide</p>
+      <button class="print-btn" onclick="printGuide()">&#128424; Save as PDF</button>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <div class="page-container" id="page-container">
+      <div class="page-header">
+        <h2 class="page-title" id="page-title"></h2>
+        <span class="page-counter" id="page-counter"></span>
+      </div>
+
+      <div class="content-grid">
+        <!-- LEFT: Photo -->
+        <div class="photo-column">
+          <div class="photo-frame">
+            <img id="page-image" src="" alt="" class="page-photo">
+          </div>
+          <div class="parts-badges" id="parts-badges"></div>
+        </div>
+
+        <!-- RIGHT: Text -->
+        <div class="text-column">
+          <div id="steps-container"></div>
+          <div class="description-box" id="description-box" style="display:none;"></div>
+          <div class="warning-box" id="warning-box" style="display:none;">
+            <span class="warning-icon">&#9888;&#65039;</span>
+            <p id="warning-text"></p>
+          </div>
+          <div class="fun-fact" id="fun-fact" style="display:none;">
+            <div class="sticky-note">
+              <div class="sticky-note-title">Fun Fact!</div>
+              <p id="fun-fact-text"></p>
+            </div>
+          </div>
+          <div class="tip-box" id="tip-box" style="display:none;">
+            <span class="tip-icon">&#128161;</span>
+            <p id="tip-text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- PRINT CONTAINER (hidden, filled dynamically) -->
+  <div id="print-container"></div>
+
+  <!-- NAVIGATION -->
+  <nav id="nav-footer">
+    <button class="nav-btn" id="prev-btn" onclick="navigatePage(-1)">
+      <span class="nav-arrow">&larr;</span> Previous
+    </button>
+    <div class="page-dots" id="page-dots"></div>
+    <button class="nav-btn" id="next-btn" onclick="navigatePage(1)">
+      Next <span class="nav-arrow">&rarr;</span>
+    </button>
+  </nav>
+
+  <script>
+    // =====================================================
+    // PAGE DATA - All 20 pages with English translations
+    // =====================================================
+    const pages = [
+      // PAGE 1: What is Spektro?
+      {
+        title: "What is Spektro?",
+        image: "IMG_3499.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "Spektro helps children safely experiment with electricity and build simple electronic circuits.",
+            bullets: []
+          },
+          {
+            num: 2,
+            text: "<strong>How does Spektro work?</strong>",
+            bullets: [
+              "Spektro teaches children to build electrical circuits step by step.",
+              "By following practical instructions, you learn how electric current flows through various components.",
+              "Children learn to connect components one after another on the base plate."
+            ]
+          },
+          {
+            num: 3,
+            text: "<strong>Warnings:</strong>",
+            bullets: [
+              "Never connect Spektro to a wall outlet or other power source.",
+              "Always check your circuit before turning it on.",
+              "Never open the battery holder while batteries are installed.",
+              "Do not try to charge non-rechargeable batteries.",
+              "Remove old batteries from the battery holder.",
+              "Charge rechargeable batteries only under adult supervision.",
+              "Use only AA batteries."
+            ]
+          }
+        ],
+        description: "<p><strong>Component symbols explained:</strong> Each component is labeled with a symbol shown in a colored circle. The color tells you which layer the component belongs to. For example: <strong>S1</strong> = Switch 1, <strong>D1</strong> = LED 1, <strong>M1</strong> = Motor 1.</p><p><strong>Troubleshooting:</strong></p><ul><li>Most problems come from incorrectly placed parts.</li><li>Check that each part is placed on the correct spot, as shown in the drawing.</li><li>Make sure the \"+\" marking on the batteries is on the correct side.</li><li>Always check that all connections are properly connected.</li><li>Use only the included battery holder.</li></ul>",
+        warning: null,
+        funFact: null,
+        tip: "Look at the last two digits of each symbol. The longer the component, the more connection points it has. Components with higher layer numbers sit deeper on the base plate.",
+        parts: []
+      },
+
+      // PAGE 2: Parts Overview
+      {
+        title: "Parts Overview",
+        image: "IMG_3500.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "<strong>Connector pieces:</strong>",
+            bullets: [
+              "1 - Single connector piece (3x)",
+              "2 - Double connector piece (6x)",
+              "3 - Triple connector piece (3x)",
+              "4 - Quadruple connector piece (1x)",
+              "5 - Quintuple connector piece (1x)",
+              "6 - Sextuple connector piece (1x)"
+            ]
+          },
+          {
+            num: 2,
+            text: "<strong>Base plate and accessories:</strong>",
+            bullets: [
+              "7 - Base plate (1x)",
+              "8 - Propeller (1x)",
+              "WC - Sound-activated switch (1x)"
+            ]
+          },
+          {
+            num: 3,
+            text: "<strong>Electronic components:</strong>",
+            bullets: [
+              "S1 - Slide switch (1x)",
+              "S2 - Push switch (1x)",
+              "RP - Light-activated switch (1x)",
+              "D1 - LED (1x)",
+              "B1B - Battery holder (1x)",
+              "SP - Speaker (1x)",
+              "M1 - Motor (1x)",
+              "L1 - Lamp (1x)",
+              "R1 - Resistor 100 Ohm (1x)",
+              "Jumper wires (2x)"
+            ]
+          }
+        ],
+        description: "<p>Before starting any project, check that you have all the parts listed on this page. Each component has a special symbol that you will see in the circuit diagrams.</p>",
+        warning: null,
+        funFact: null,
+        tip: "Keep all your parts organized. After each experiment, put the parts back in order so you can find them easily for the next one!",
+        parts: ["S1", "S2", "RP", "D1", "B1B", "SP", "M1", "L1", "R1", "WC"]
+      },
+
+      // PAGE 3: Parts Overview - ICs
+      {
+        title: "Parts Overview - Integrated Circuits",
+        image: "IMG_3501.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "<strong>Music IC (U1)</strong> - Can play a song through the speaker (1x):",
+            bullets: [
+              "<strong>a</strong> = Connected to the \"-\" of the battery holder.",
+              "<strong>b</strong> = Plays the music once when briefly connected to \"+\" of the battery holder. The music stops after about 20 seconds.",
+              "<strong>c</strong> = Connected to the \"+\" of the battery holder. Music keeps playing as long as <strong>d</strong> is connected to \"+\".",
+              "<strong>d</strong> = This is the output of the circuit. Connect the speaker here."
+            ]
+          },
+          {
+            num: 2,
+            text: "<strong>Alarm IC (U2)</strong> - Can produce 5 different alarm sounds (1x):",
+            bullets: [
+              "<strong>a</strong> = Connected to the \"-\" of the battery holder.",
+              "<strong>b</strong> = Connected to the \"+\" of the battery holder, Input 1.",
+              "<strong>c</strong> = Connected to the \"+\" of the battery holder, Input 2.",
+              "<strong>d</strong> = Connected to the \"+\" of the battery holder, Input 3.",
+              "<strong>e</strong> = This is the output of the circuit. Connect the speaker here.",
+              "Alarm 1: Close a, c and e.",
+              "Alarm 2: Close a, b and e.",
+              "Alarm 3: Close a, c and e. Also close d.",
+              "Alarm 4: Close a, c and e. Also close b.",
+              "Alarm 5: Close a, c and e. Connect b and d to each other."
+            ]
+          },
+          {
+            num: 3,
+            text: "<strong>Space Sound IC (U3)</strong> - Can produce 8 sounds through the speaker (1x):",
+            bullets: [
+              "<strong>a</strong> = This is the output of the circuit. Connect the speaker here.",
+              "<strong>b</strong> = Connected to the \"-\" of the battery holder, Input 2.",
+              "<strong>c</strong> = Connected to the \"-\" of the battery holder.",
+              "<strong>d</strong> = Connected to the \"-\" of the battery holder, Input 1.",
+              "<strong>e</strong> = Connected to the \"+\" of the battery holder.",
+              "Connections <strong>b</strong> and <strong>d</strong> are used to choose between sounds.",
+              "Two sound effects can be played simultaneously by closing b and d together."
+            ]
+          }
+        ],
+        description: "<p><strong>IC</strong> stands for <strong>Integrated Circuit</strong> - a tiny chip that contains a complete electronic circuit inside. Each IC in your kit has labeled connection points (a, b, c, d, e) that connect to different parts of the circuit.</p>",
+        warning: null,
+        funFact: "An Integrated Circuit (IC) is like a miniature city of electronic components. A single IC chip smaller than your fingernail can contain millions of tiny parts! The ICs in your Spektro kit are simpler, but they work on the same principle.",
+        tip: null,
+        parts: ["U1", "U2", "U3"]
+      },
+
+      // PAGE 4: Electric Circuit
+      {
+        title: "Electric Circuit",
+        image: "IMG_3502.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "",
+            bullets: [
+              "Build the circuit on the base plate as shown in the drawing.",
+              "Slide switch S1 to <strong>\"on\"</strong> and the lamp will light up.",
+              "Slide the switch back to <strong>\"off\"</strong> and the lamp turns off."
+            ]
+          },
+          {
+            num: 2,
+            text: "",
+            bullets: [
+              "Replace slide switch S1 with <strong>push switch S2</strong>.",
+              "Press the push switch and the lamp lights up. The lamp stays on as long as you hold the button down."
+            ]
+          }
+        ],
+        description: "<p>All the components in this circuit are connected in a loop (a circle). This lets the electric current flow around the entire circuit. The current from the battery holder travels through the circuit in a round trip.</p><p>Along the way, current flows through the lamp, through the connector pieces, and through the switch. <strong>Only when the current can make a complete round trip</strong> without being interrupted does the lamp light up. This is called a <strong>\"closed circuit.\"</strong></p><p>When switch S1 is set to \"off,\" the current flow is interrupted. This is called an <strong>\"open circuit\"</strong> - like a gap in a road that cars can't cross!</p>",
+        warning: null,
+        funFact: "When you flip a light switch at home, you're doing exactly the same thing! The switch either closes the circuit (lamp on) or opens it (lamp off). Can you spot the difference between the slide switch and the push switch? One stays in position, the other springs back!",
+        tip: "First place all the components from layer 1 (the ones with numbers in circles). Then place the components from layer 2 (the ones with numbers in triangles).",
+        parts: ["S1", "S2", "L1", "B1B"]
+      },
+
+      // PAGE 5: Helicopter
+      {
+        title: "Helicopter",
+        image: "IMG_3503.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "",
+            bullets: [
+              "Build the circuit on the base plate as shown in the drawing. Make sure the <strong>\"+\" of motor M1</strong> is on the correct side.",
+              "Place the propeller on the motor. The propeller should spin freely. Make sure nothing gets caught above.",
+              "Press push switch S2 and the propeller starts spinning."
+            ]
+          },
+          {
+            num: 2,
+            text: "The faster the motor spins before you press push switch S2, the higher the propeller will fly! Can you get the propeller to fly <strong>1 meter</strong> into the air?",
+            bullets: []
+          },
+          {
+            num: 3,
+            text: "",
+            bullets: [
+              "Turn motor M1 around so the \"+\" is on the other side.",
+              "Place the propeller on the motor.",
+              "Press push switch S2 and the propeller starts spinning. The propeller stays seated!"
+            ]
+          }
+        ],
+        description: "<p>If the propeller does not fly high enough, or if the motor only spins for about 10 seconds, your batteries might be running low. Try fresh batteries!</p><p>By reversing the \"+\" and \"-\" connections of the motor, you change the direction it spins. When it spins one way, the propeller screws upward into the air. When it spins the other way, it pushes down and stays put.</p>",
+        warning: "WARNING: Never touch the motor while it is spinning!",
+        funFact: "This is a miniature version of how real helicopters work! The spinning rotor blades push air downward, which lifts the helicopter up. Electric motors are found in many everyday objects - can you think of some? (Hint: fans, washing machines, electric toothbrushes!)",
+        tip: null,
+        parts: ["S2", "M1", "B1B"]
+      },
+
+      // PAGE 6: Series Circuits
+      {
+        title: "Series Circuits",
+        image: "IMG_3504.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "",
+            bullets: [
+              "Build the circuit.",
+              "Make sure the \"+\" of motor M1 is on the correct side and attach the propeller on motor M1.",
+              "Slide switch S1 to <strong>\"on\"</strong>. What happens? Does the lamp still light up the same? (Look carefully!)"
+            ]
+          },
+          {
+            num: 2,
+            text: "",
+            bullets: [
+              "Slide switch S1 to \"off\".",
+              "Swap motor M1 and lamp L1.",
+              "Attach the propeller on the motor."
+            ]
+          },
+          {
+            num: 3,
+            text: "",
+            bullets: [
+              "Slide switch S1 to \"off\".",
+              "Remove lamp L1 from the circuit.",
+              "When you slide switch S1 to \"on\", motor M1 will not spin."
+            ]
+          },
+          {
+            num: 4,
+            text: "",
+            bullets: [
+              "Remove the propeller from the motor.",
+              "Slide switch S1 to <strong>\"on\"</strong>."
+            ]
+          }
+        ],
+        description: "<p>In a <strong>series circuit</strong>, the electric current flows through both the lamp L1 and motor M1 one after the other. If one part fails or is removed, everything stops - just like a chain where one broken link stops the whole thing!</p><p>When you swap the motor and lamp (step 2), nothing changes - the brightness stays the same and the motor speed stays the same. <strong>In a series circuit, the order doesn't matter!</strong></p><p>When you remove the lamp (step 3), the circuit is broken and the motor won't spin.</p><p>Without the propeller (step 4), the motor spins more easily. Less current flows through the motor and therefore also through the lamp. Less current = dimmer lamp!</p>",
+        warning: "WARNING: Never touch the motor while it is spinning!",
+        funFact: null,
+        tip: null,
+        parts: ["S1", "M1", "L1", "B1B"]
+      },
+
+      // PAGE 7: Parallel Circuits
+      {
+        title: "Parallel Circuits",
+        image: "IMG_3506.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "",
+            bullets: [
+              "Build the circuit.",
+              "Make sure the \"+\" of motor M1 is on the correct side and attach the propeller on the motor.",
+              "Slide switch S1 to <strong>\"on\"</strong>."
+            ]
+          },
+          {
+            num: 2,
+            text: "",
+            bullets: [
+              "Slide switch S1 to \"off\".",
+              "Swap motor M1 and lamp L1.",
+              "Make sure the \"+\" of motor M1 is on the correct side and place the motor in place of the lamp.",
+              "Slide switch S1 to \"on\"."
+            ]
+          },
+          {
+            num: 3,
+            text: "",
+            bullets: [
+              "Slide switch S1 to \"off\".",
+              "Remove the propeller from the motor and put the lamp back in the circuit.",
+              "Slide switch S1 to \"on\"."
+            ]
+          }
+        ],
+        description: "<p>In a <strong>parallel circuit</strong>, the motor and lamp each have their own connection to the battery. The current splits - some goes through the motor, some goes through the lamp. They work <strong>independently</strong>!</p><p>Even when one component stops, the other keeps working. The current through the lamp does not go through the motor - they each have their own path.</p><p>When you swap them (step 2), nothing changes - <strong>in a parallel circuit, the order doesn't matter!</strong></p><p>But here's the big difference from a series circuit: when you remove the lamp, <strong>the motor still works!</strong> That's because the current through the motor has its own separate path.</p>",
+        warning: null,
+        funFact: "The lights in your house are connected in parallel! That's why when one light bulb burns out, all the other lights stay on. Imagine if they were in series - one broken bulb would make your whole house go dark!",
+        tip: null,
+        parts: ["S1", "M1", "L1", "B1B"]
+      },
+
+      // PAGE 8: LED
+      {
+        title: "LED",
+        image: "IMG_3507.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "",
+            bullets: [
+              "Build the circuit.",
+              "Make sure the <strong>\"+\" of red LED D1</strong> is on the correct side.",
+              "Slide switch S1 to \"on\" and the red LED D1 lights up. Lamp L1 also turns on."
+            ]
+          },
+          {
+            num: 2,
+            text: "",
+            bullets: [
+              "Turn LED D1 around so the \"+\" is now connected to the \"-\" of the battery holder via switch S1.",
+              "Slide switch S1 to \"on\"."
+            ]
+          },
+          {
+            num: 3,
+            text: "Now turn the <strong>lamp L1</strong> around. Does it still work?",
+            bullets: []
+          }
+        ],
+        description: "<p>This circuit is connected in <strong>parallel</strong>. But here's something interesting: current can only flow in <strong>one direction</strong> through the LED!</p><p>When you turn the LED around (step 2), no current flows through it - it stays dark. The LED has a plus (+) and a minus (-), and current can only go one way through it. But the lamp still lights up because it has its own path!</p><p>When you turn the lamp around (step 3), it still works fine. A regular lamp doesn't care which direction the current flows - it has no plus or minus. But an LED does!</p>",
+        warning: null,
+        funFact: "LED stands for Light Emitting Diode - a tiny component that emits light. LEDs use much less energy than regular light bulbs, which is why they are used more and more everywhere. The lights on your TV, game console, and maybe even your bedroom lamp are probably LEDs!",
+        tip: null,
+        parts: ["S1", "D1", "L1", "B1B"]
+      },
+
+      // PAGE 9: Conductivity Detection
+      {
+        title: "Conductivity Detection",
+        image: "IMG_3508.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "",
+            bullets: [
+              "Build the circuit."
+            ]
+          },
+          {
+            num: 2,
+            text: "",
+            bullets: [
+              "Try different materials to make a connection between the lamp and the battery holder.",
+              "Write down which materials conduct electricity.",
+              "Here are some suggestions: <strong>Pencil, Scissors, Paper, Spoon</strong>"
+            ]
+          }
+        ],
+        description: "<p>The circuit is <strong>open</strong> - there is no complete loop for the current to flow through. Lamp L1 will not light up.</p><p>To make lamp L1 light up, you need to make a connection between point X and point Y so the current can flow in a loop. You can use a single connector piece, or test other materials between X and Y.</p><p>If the lamp lights up, that material <strong>conducts</strong> electricity!</p>",
+        warning: null,
+        funFact: "A material that lets electric current flow through it is called a CONDUCTOR. A material that blocks electric current is called an INSULATOR. Metals like copper and iron are great conductors. Plastic, rubber, and glass are good insulators. That's why electrical wires have a plastic coating - to keep you safe!",
+        tip: null,
+        parts: ["S1", "L1", "B1B"]
+      },
+
+      // PAGE 10: Music Circuit
+      {
+        title: "Music Circuit",
+        image: "IMG_3509.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "The music circuit U1 plays a tune when current flows through it.",
+            bullets: [
+              "Build the circuit.",
+              "Slide switch S1 to <strong>\"on\"</strong>. The music plays once.",
+              "Press push switch S2 and you can control the music yourself. This works like a <strong>doorbell</strong>. As long as you hold push switch S2, the music keeps playing."
+            ]
+          },
+          {
+            num: 2,
+            text: "The music can also be much louder! The 100 Ohm resistor R1 dampens the sound.",
+            bullets: [
+              "Replace the 100 Ohm resistor R1 with a single connector piece.",
+              "Press push switch S2 again - the music is now much louder!"
+            ]
+          }
+        ],
+        description: "<p>A <strong>resistor</strong> makes sure less current flows in a circuit. You can use a resistor to dampen sound or to make a lamp burn dimmer. When you removed the resistor, more current could flow, making the speaker louder!</p>",
+        warning: null,
+        funFact: "A resistor controls how much current flows in a circuit. The resistor in your kit has a value of 100 Ohm. The higher the value, the harder it is for current to flow through. Instead of writing \"Ohm\" every time, scientists use a special symbol that looks like a horseshoe: this is the Greek letter Omega!",
+        tip: null,
+        parts: ["S1", "S2", "U1", "SP", "R1", "B1B"]
+      },
+
+      // PAGE 11: Space Sounds
+      {
+        title: "Space Sounds",
+        image: "IMG_3511.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "",
+            bullets: [
+              "Build the circuit.",
+              "Slide switch S1 to <strong>\"on\"</strong>. The speaker SP plays a sound.",
+              "Slide switch S1 to \"off\" and then right back to \"on\" - you hear a <strong>different sound</strong> now."
+            ]
+          },
+          {
+            num: 2,
+            text: "",
+            bullets: [
+              "Slide switch S1 to \"off\".",
+              "Press push switch S2. The speaker SP plays a sound as long as you hold the switch pressed."
+            ]
+          },
+          {
+            num: 3,
+            text: "",
+            bullets: [
+              "Slide switch S1 to \"on\". The speaker SP plays a sound.",
+              "Now also press S2. You hear <strong>two sounds mixed together!</strong>",
+              "How many sound combinations can you make?"
+            ]
+          }
+        ],
+        description: "<p>Each time the circuit with U3 receives a signal, it plays a different sound pattern. By using both switches at the same time, you can mix sounds together and create your own space symphony!</p>",
+        warning: null,
+        funFact: "Do you know how sound is created? Sound is made by vibrations in the air! Sound travels through the air as sound waves, just like ripples in water. Sound can also travel through water - that's why you can hear things underwater! For example, you can hear small raindrops hitting a pond while swimming below the surface.",
+        tip: null,
+        parts: ["S1", "S2", "U3", "SP", "B1B"]
+      },
+
+      // PAGE 12: Reflection
+      {
+        title: "Reflection",
+        image: "IMG_3512.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "For this experiment you need a <strong>small mirror</strong>.",
+            bullets: [
+              "Build the circuit.",
+              "Slide switch S1 to \"on\". Lamp L1 lights up and you hear the alarm.",
+              "Hold the mirror near the light-activated switch RP - lamp L1 stays on and the alarm goes off."
+            ]
+          },
+          {
+            num: 2,
+            text: "",
+            bullets: [
+              "Take the circuit to a <strong>dark place</strong>.",
+              "Slide switch S1 to \"on\". Lamp L1 lights up and the music does not play."
+            ]
+          },
+          {
+            num: 3,
+            text: "",
+            bullets: [
+              "Hold the mirror above the lamp so the light <strong>reflects</strong> into the light-activated switch RP.",
+              "The alarm starts!"
+            ]
+          }
+        ],
+        description: "<p>The light-activated switch RP detects light. When light hits it, it allows current to flow. By using a mirror, you can bounce light from the lamp onto the sensor. The more light you reflect, the louder the music gets.</p><p><strong>Extra challenge:</strong></p><ul><li>Repeat the experiment. Instead of a mirror, use a piece of white paper. This also works because a white surface reflects light.</li><li>Try it also with paper of another color.</li></ul>",
+        warning: null,
+        funFact: "Light bounces off surfaces just like a ball bounces off a wall! A mirror reflects almost all the light that hits it. White paper also reflects a lot of light, but colored and dark surfaces absorb more light. That's why dark clothes feel warmer in the sun!",
+        tip: null,
+        parts: ["S1", "U2", "RP", "L1", "SP", "B1B"]
+      },
+
+      // PAGE 13: This OR That
+      {
+        title: "This OR That",
+        image: "IMG_3513.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "An <strong>\"OR circuit\"</strong> turns on when <strong>at least one</strong> of the switches is on.",
+            bullets: [
+              "Build the circuit.",
+              "Lamp L1 lights up when one of the switches makes a connection.",
+              "Try making different switch connections and see if lamp L1 turns on."
+            ]
+          }
+        ],
+        description: "<p>In an OR circuit, the lamp turns on if switch A is on, <strong>OR</strong> if switch B is on, <strong>OR</strong> if both are on. The only time the lamp is off is when ALL switches are off.</p><p>When you connect both switches at the same time, the lamp does not burn brighter or dimmer - it stays the same!</p><p><strong>Real-world example:</strong> Think about the interior light in a car. It turns on when any door is opened. It doesn't matter which door - if one OR more doors are open, the light is on. The light only goes off when ALL doors are closed. Ask someone if you can try this in a real car!</p>",
+        warning: null,
+        funFact: "OR circuits are one of the basic building blocks of all computers and smartphones! Every app you use, every game you play - they all rely on simple OR, AND, and NOT circuits working together millions of times per second.",
+        tip: null,
+        parts: ["S1", "S2", "L1", "B1B"]
+      },
+
+      // PAGE 14: This AND That
+      {
+        title: "This AND That",
+        image: "IMG_3514.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "An <strong>AND circuit</strong> only works when <strong>ALL</strong> switches are on.",
+            bullets: [
+              "Build the circuit.",
+              "The motor will only spin when both switches make a connection.",
+              "Try making only one switch connection and see if the motor works."
+            ]
+          }
+        ],
+        description: "<p>In an AND circuit, the motor only runs when switch A is on <strong>AND</strong> switch B is on. If even one switch is off, nothing happens!</p><p><strong>Real-world example:</strong> Think about a washing machine. It will only start when TWO conditions are met:</p><p>1. The door is closed.<br>2. The on/off button is pressed.</p><p>If even one condition is not met, the washing machine won't start. This is an AND circuit in action - it keeps you safe! Ask someone if you can test this on a real washing machine.</p>",
+        warning: null,
+        funFact: "AND circuits are used everywhere for safety! A microwave won't turn on unless the door is closed AND you press start. A car won't start unless the brake is pressed AND you turn the key (or press the button). Can you think of other examples?",
+        tip: null,
+        parts: ["S1", "S2", "M1", "B1B"]
+      },
+
+      // PAGE 15: NAND
+      {
+        title: "Not This AND That (NAND)",
+        image: "IMG_3515.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "In English, this is called a <strong>\"NAND\" circuit</strong>. This principle is used a lot in computers!",
+            bullets: [
+              "Build the circuit.",
+              "Set switch S1 to \"off\". The LED will stay lit even if you press switch S2.",
+              "Set switch S1 to <strong>\"on\"</strong>. The LED goes out when you press switch S2."
+            ]
+          }
+        ],
+        description: "<p>A NAND circuit is the <strong>opposite</strong> of an AND circuit! Remember: in an AND circuit, the light turns ON when both switches are on. In a NAND circuit, the light turns <strong>OFF</strong> when both switches are on.</p><p>When all switches are on, the current flows through the switches instead of through the LED. The current takes the easier path through the switches because they have less electrical resistance.</p><p>You could say: the lamp lights when one <strong>OR</strong> the other switch is OFF.</p>",
+        warning: "After this experiment, disconnect the battery holder or break the circuit to turn it off completely. This prevents the batteries from draining!",
+        funFact: "NAND gates are sometimes called \"universal gates\" because you can build ANY other type of logic circuit using only NAND gates! Computer engineers love this because it means they only need one type of building block to create incredibly complex circuits.",
+        tip: null,
+        parts: ["S1", "S2", "D1", "R1", "B1B"]
+      },
+
+      // PAGE 16: NOR
+      {
+        title: "Not This OR That (NOR)",
+        image: "IMG_3516.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "In English, this is called a <strong>\"NOR\" circuit</strong>. This principle is used a lot in computers and computer chips.",
+            bullets: [
+              "Build the circuit.",
+              "Slide switch S1 to \"off\". LED D1 should light up.",
+              "Press switch S2 now. The LED stays on.",
+              "Slide switch S1 to <strong>\"on\"</strong>. The LED goes off."
+            ]
+          },
+          {
+            num: 2,
+            text: "",
+            bullets: [
+              "Remove slide switch S1 from the circuit."
+            ]
+          }
+        ],
+        description: "<p>A NOR circuit is the <strong>opposite</strong> of an OR circuit. The LED only stays on when <strong>ALL switches are off</strong>. As soon as any switch turns on, the current flows through the switch instead of through the LED.</p><p>When you remove S1 (step 2), what remains is called a <strong>NOT circuit</strong>. When you press switch S2, the LED goes off. When you release it, the LED comes back on - it does the <strong>opposite</strong> of what you'd expect!</p>",
+        warning: "After this experiment, disconnect the battery holder or break the circuit. This prevents the batteries from draining!",
+        funFact: "You now know OR, AND, NOR, NOT, and NAND circuits. ALL digital electronics - computers, tablets, phones, game consoles - are built from just these simple types of circuits! A modern computer chip contains BILLIONS of these tiny circuits, all working together.",
+        tip: null,
+        parts: ["S1", "S2", "D1", "R1", "B1B"]
+      },
+
+      // PAGE 17: Sound Siren
+      {
+        title: "Sound Siren",
+        image: "IMG_3517.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "",
+            bullets: [
+              "Build the circuit.",
+              "Slide switch S1 to <strong>\"on\"</strong> and the siren goes off."
+            ]
+          },
+          {
+            num: 2,
+            text: "",
+            bullets: [
+              "Place a triple connector piece between points <strong>x and y</strong> in the circuit.",
+              "Slide switch S1 to \"on\" - a <strong>different siren</strong> plays! This one has pauses between tones.",
+              "Press S2 for yet another siren. Make sure there is no connection between x and y!"
+            ]
+          },
+          {
+            num: 3,
+            text: "",
+            bullets: [
+              "Remove push switch S2.",
+              "Place a single connector piece on point <strong>v</strong>.",
+              "Place a double connector piece between points <strong>x and w</strong>.",
+              "Slide switch S1 to \"on\" - <strong>another siren</strong> plays!"
+            ]
+          }
+        ],
+        description: "<p>By changing the circuit connections, you can create different siren sounds! Each configuration sends different signals to the Alarm IC (U2), which produces a different pattern of tones.</p>",
+        warning: null,
+        funFact: "The two-tone sirens on police cars and ambulances have changed a lot over the years. Modern vehicles have many different sounds - they are all produced digitally! Modern sirens can be heard from much further away than the old ones. Emergency vehicles use different sounds to warn other drivers.",
+        tip: null,
+        parts: ["S1", "S2", "U2", "SP", "B1B"]
+      },
+
+      // PAGE 18: Mixed Sound Effects
+      {
+        title: "Mixed Sound Effects",
+        image: "IMG_3518.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "",
+            bullets: [
+              "Build the circuit.",
+              "Set switch S1 to <strong>\"on\"</strong>. You hear a series of sound effects lasting about 10 seconds. Then it stops.",
+              "Make a sound near the <strong>sound-activated switch WC</strong> and the sounds start again. If it doesn't respond to your voice, you can also tap on it."
+            ]
+          },
+          {
+            num: 2,
+            text: "",
+            bullets: [
+              "Remove the sound-activated switch WC from the circuit.",
+              "You can now use <strong>push switch S2</strong> to control the sound effects.",
+              "If you release it and press again, it sounds <strong>different each time</strong>. Try it out!"
+            ]
+          }
+        ],
+        description: "<p>This circuit combines the Music IC (U1) and Space Sound IC (U3) together! The sound-activated switch WC is like a microphone - it detects sound and uses it to trigger the circuit. When you replace it with push switch S2, you get manual control over the sound effects.</p><p>Each time you restart, the sounds play in a different pattern.</p>",
+        warning: null,
+        funFact: "Sound-activated switches are used in many real devices! Some lights turn on when you clap your hands. Some toys respond to your voice. Even some car alarms use sound sensors to detect when someone is trying to break in!",
+        tip: null,
+        parts: ["S1", "S2", "U1", "U3", "SP", "WC", "B1B"]
+      },
+
+      // PAGE 19: Optical Effects (Part 1)
+      {
+        title: "Optical Effects (Part 1)",
+        image: "IMG_3519.jpg",
+        steps: [
+          {
+            num: 1,
+            text: "",
+            bullets: [
+              "Build the circuit.",
+              "Place the propeller on motor M1. Make sure the \"+\" of motor M1 is on the correct side.",
+              "Press push switch S2 and the motor starts spinning."
+            ]
+          },
+          {
+            num: 2,
+            text: "",
+            bullets: [
+              "Copy or cut out the <strong>4 discs</strong> from page 25.",
+              "Tape disc <strong>\"a\"</strong> onto the propeller. Make sure the center of the disc is in the center of the propeller.",
+              "If the disc is attached on all four corners, put the propeller back on the motor.",
+              "Press the switch and the motor starts spinning.",
+              "The outward-running lines are no longer visible. The disc appears grey.",
+              "When you release the switch, the spiral slowly reappears."
+            ]
+          },
+          {
+            num: 3,
+            text: "",
+            bullets: [
+              "Now tape disc <strong>\"b\"</strong> on the propeller.",
+              "Press the switch and the motor starts spinning.",
+              "The six white lines are no longer visible. The disc appears grey. The middle dot stays visible.",
+              "When you release the switch, you see the lines more clearly rotating around."
+            ]
+          }
+        ],
+        description: "<p>When the discs spin fast enough, your eyes can't follow the individual lines anymore. Your brain blends everything together and you see a solid grey color instead!</p>",
+        warning: null,
+        funFact: "If you look closely, you can see the lines appear to first go clockwise and then counterclockwise. This alternating effect is called an optical illusion - your brain is being tricked by the spinning pattern!",
+        tip: "You can also download and print the discs from the website.",
+        parts: ["S2", "M1", "B1B"]
+      },
+
+      // PAGE 20: Optical Effects (Part 2)
+      {
+        title: "Optical Effects (Part 2)",
+        image: "IMG_3520.jpg",
+        steps: [
+          {
+            num: 4,
+            text: "",
+            bullets: [
+              "Tape disc <strong>\"d\"</strong> on the propeller.",
+              "Press the switch and the motor starts spinning.",
+              "The different figures on the disc give a different result when spinning fast."
+            ]
+          },
+          {
+            num: 5,
+            text: "",
+            bullets: [
+              "Tape disc <strong>\"c\"</strong> on the propeller.",
+              "Press the switch and the motor starts spinning.",
+              "The lines from inside to outside are no longer visible. <strong>Colored circles</strong> appear! It looks like a rainbow!",
+              "Count the colors in each ring."
+            ]
+          },
+          {
+            num: 6,
+            text: "",
+            bullets: [
+              "Try spinning disc \"c\" the other way to make the rings go from dark on the outside to light on the inside."
+            ]
+          },
+          {
+            num: 7,
+            text: "",
+            bullets: [
+              "Cut out a blank disc of your own!",
+              "Draw your own patterns on it.",
+              "Try it and see what it looks like when it spins!"
+            ]
+          }
+        ],
+        description: "<p>With disc \"c\", different colored circles appear because of the way your eyes process the spinning black and white patterns. Count the colors in each ring - the outer rings have more colors!</p><p>The more patterns on each ring, the darker the color appears when spinning. The small circles on disc \"d\" next to each other form a clear larger circle when spinning - another amazing optical illusion!</p>",
+        warning: null,
+        funFact: "Movies and TV shows use the same trick! They show you 24-30 pictures per second, and your brain blends them together into smooth motion. This is called \"persistence of vision.\" Without this optical illusion, movies wouldn't work!",
+        tip: null,
+        parts: ["S2", "M1", "B1B"]
+      }
+    ];
+
+    // =====================================================
+    // STATE & NAVIGATION
+    // =====================================================
+    let currentPage = 0;
+    let direction = 'forward';
+
+    function init() {
+      buildDots();
+      renderPage(0);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+          e.preventDefault();
+          navigatePage(1);
+        }
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          navigatePage(-1);
+        }
+      });
+
+      // Touch/swipe support
+      let touchStartX = 0;
+      let touchStartY = 0;
+      document.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      });
+      document.addEventListener('touchend', function(e) {
+        const diffX = touchStartX - e.changedTouches[0].screenX;
+        const diffY = touchStartY - e.changedTouches[0].screenY;
+        if (Math.abs(diffX) > 60 && Math.abs(diffX) > Math.abs(diffY)) {
+          navigatePage(diffX > 0 ? 1 : -1);
+        }
+      });
+    }
+
+    function navigatePage(delta) {
+      const newPage = currentPage + delta;
+      if (newPage < 0 || newPage >= pages.length) return;
+      direction = delta > 0 ? 'forward' : 'back';
+      currentPage = newPage;
+      renderPage(currentPage);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToPage(index) {
+      if (index < 0 || index >= pages.length) return;
+      direction = index > currentPage ? 'forward' : 'back';
+      currentPage = index;
+      renderPage(currentPage);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // =====================================================
+    // RENDERING HELPERS
+    // =====================================================
+    function renderStepHTML(step) {
+      var html = '';
+      if (step.text) html += '<p>' + step.text + '</p>';
+      if (step.bullets && step.bullets.length > 0) {
+        html += '<ul>';
+        step.bullets.forEach(function(b) {
+          html += '<li>' + b + '</li>';
+        });
+        html += '</ul>';
+      }
+      return html;
+    }
+
+    // =====================================================
+    // RENDERING
+    // =====================================================
+    function renderPage(index) {
+      const page = pages[index];
+      const container = document.getElementById('page-container');
+
+      // Animation
+      container.className = 'page-container';
+      void container.offsetWidth;
+      container.className = direction === 'forward'
+        ? 'page-container'
+        : 'page-container slide-back';
+
+      // Title and counter
+      document.getElementById('page-title').textContent = page.title;
+      document.getElementById('page-counter').textContent =
+        'Step ' + (index + 1) + ' of ' + pages.length;
+
+      // Image
+      var img = document.getElementById('page-image');
+      img.src = page.image;
+      img.alt = 'Spektro booklet - ' + page.title;
+
+      // Steps
+      var stepsContainer = document.getElementById('steps-container');
+      stepsContainer.innerHTML = '';
+      if (page.steps && page.steps.length > 0) {
+        page.steps.forEach(function(step) {
+          var stepEl = document.createElement('div');
+          stepEl.className = 'step-item';
+          stepEl.innerHTML =
+            '<div class="step-number">' + step.num + '</div>' +
+            '<div class="step-text">' + renderStepHTML(step) + '</div>';
+          stepsContainer.appendChild(stepEl);
+        });
+      }
+
+      // Description
+      var descBox = document.getElementById('description-box');
+      if (page.description) {
+        descBox.style.display = 'block';
+        descBox.innerHTML = page.description;
+      } else {
+        descBox.style.display = 'none';
+      }
+
+      // Warning
+      var warningBox = document.getElementById('warning-box');
+      if (page.warning) {
+        warningBox.style.display = 'flex';
+        document.getElementById('warning-text').textContent = page.warning;
+      } else {
+        warningBox.style.display = 'none';
+      }
+
+      // Fun Fact
+      var funFactBox = document.getElementById('fun-fact');
+      if (page.funFact) {
+        funFactBox.style.display = 'block';
+        document.getElementById('fun-fact-text').textContent = page.funFact;
+      } else {
+        funFactBox.style.display = 'none';
+      }
+
+      // Tip
+      var tipBox = document.getElementById('tip-box');
+      if (page.tip) {
+        tipBox.style.display = 'flex';
+        document.getElementById('tip-text').textContent = page.tip;
+      } else {
+        tipBox.style.display = 'none';
+      }
+
+      // Parts badges
+      var badgesContainer = document.getElementById('parts-badges');
+      badgesContainer.innerHTML = '';
+      if (page.parts && page.parts.length > 0) {
+        var label = document.createElement('span');
+        label.style.cssText = 'font-size:0.8rem;color:#666;font-weight:600;margin-right:4px;';
+        label.textContent = 'Parts needed:';
+        badgesContainer.appendChild(label);
+        page.parts.forEach(function(part) {
+          var badge = document.createElement('span');
+          badge.className = 'part-badge';
+          badge.textContent = part;
+          badgesContainer.appendChild(badge);
+        });
+      }
+
+      // Navigation buttons
+      document.getElementById('prev-btn').disabled = (index === 0);
+      document.getElementById('next-btn').disabled = (index === pages.length - 1);
+
+      // Progress bar
+      var progress = ((index + 1) / pages.length) * 100;
+      document.getElementById('progress-bar').style.width = progress + '%';
+
+      // Dots
+      updateDots(index);
+    }
+
+    // =====================================================
+    // DOTS
+    // =====================================================
+    function buildDots() {
+      var container = document.getElementById('page-dots');
+      container.innerHTML = '';
+      pages.forEach(function(page, i) {
+        var dot = document.createElement('button');
+        dot.className = 'page-dot';
+        dot.title = page.title;
+        dot.setAttribute('aria-label', 'Go to: ' + page.title);
+        dot.onclick = function() { goToPage(i); };
+        container.appendChild(dot);
+      });
+    }
+
+    function updateDots(index) {
+      var dots = document.querySelectorAll('.page-dot');
+      dots.forEach(function(dot, i) {
+        if (i === index) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    // =====================================================
+    // PRINT / PDF
+    // =====================================================
+    function printGuide() {
+      var container = document.getElementById('print-container');
+      var html = '';
+
+      pages.forEach(function(page, i) {
+        html += '<div class="print-page">';
+        html += '<div class="page-title">' + (i + 1) + '. ' + page.title + '</div>';
+        html += '<div class="print-grid">';
+
+        // Photo
+        html += '<div><img src="' + page.image + '" alt="' + page.title + '"></div>';
+
+        // Text content
+        html += '<div>';
+
+        // Steps
+        if (page.steps && page.steps.length > 0) {
+          page.steps.forEach(function(step) {
+            html += '<div class="step-item">';
+            html += '<div class="step-number">' + step.num + '</div>';
+            html += '<div class="step-text">' + renderStepHTML(step) + '</div>';
+            html += '</div>';
+          });
+        }
+
+        // Description
+        if (page.description) {
+          html += '<div class="description-box">' + page.description + '</div>';
+        }
+
+        // Extras
+        html += '<div class="print-extras">';
+        if (page.warning) {
+          html += '<div class="warning-box">&#9888;&#65039; ' + page.warning + '</div>';
+        }
+        if (page.funFact) {
+          html += '<div class="sticky-note"><div class="sticky-note-title">Fun Fact!</div>' + page.funFact + '</div>';
+        }
+        if (page.tip) {
+          html += '<div class="tip-box">&#128161; ' + page.tip + '</div>';
+        }
+        html += '</div>'; // print-extras
+
+        html += '</div>'; // text content
+        html += '</div>'; // print-grid
+        html += '</div>'; // print-page
+      });
+
+      container.innerHTML = html;
+      setTimeout(function() { window.print(); }, 300);
+    }
+
+    // =====================================================
+    // START
+    // =====================================================
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
